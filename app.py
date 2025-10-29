@@ -20,8 +20,8 @@ def load_all():
             dfs[name] = pd.DataFrame()
     return dfs
 
-st.set_page_config(page_title="F1 Strategy Lab — v2", layout="wide")
-st.title("🏁 F1 Strategy Lab — v2")
+st.set_page_config(page_title="F1 Strategy Lab", layout="wide")
+st.title("F1 Strategy Lab")
 
 data = load_all()
 if data["races"].empty or data["lap_times"].empty or data["results"].empty or data["drivers"].empty:
@@ -97,7 +97,7 @@ cfg = SimulationConfig(
     tyre_params=params
 )
 
-tab1, tab2, tab3 = st.tabs(["🔧 Simulate", "🧪 Validation", "ℹ️ Notes"])
+tab1, tab2 = st.tabs(["🔧 Simulate", "🧪 Validation"])
 
 with tab1:
     st.subheader("Simulate custom strategy")
@@ -132,16 +132,6 @@ with tab2:
         else:
             st.json(res)
 
-with tab3:
-    st.markdown("""
-**What changed vs v1**
-
-- Adds realistic **tyre decay** per stint (customizable per compound).
-- **Traffic penalty** after bad rejoin.
-- **SC/VSC** windows slow laps and reduce pit loss.
-- Optional **ML** predictor for lap times.
-- **Validation** panel to compare summed laps with official `results.milliseconds`.
-""")
 
 
 
