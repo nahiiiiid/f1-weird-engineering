@@ -132,7 +132,7 @@ with tab2:
         else:
             st.json(res)
 
-
+# can be added tab 3  for real simulation of data insights 
 
 
 # import streamlit as st
