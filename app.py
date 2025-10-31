@@ -21,7 +21,7 @@ def load_all():
     return dfs
 
 st.set_page_config(page_title="F1 Strategy Lab", layout="wide")
-st.title("F1 Strategy Lab")
+st.title("F1 Strategy Lab - Weird Simulations")
 
 data = load_all()
 if data["races"].empty or data["lap_times"].empty or data["results"].empty or data["drivers"].empty:
